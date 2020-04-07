@@ -1,15 +1,30 @@
 <Choose>:
     BoxLayout:
         orientation: 'vertical'
-
         Button:
             text: "Tesco"
             font_size: 24
             on_press: root.toTesco()
+            Image:
+                source: 'tesco.png'
+                y: self.parent.y
+                x: self.parent.x
+                size: self.parent.size
+                width: self.parent.width
+                keep_ratio: False
+                allow_stretch: True
         Button:
             text: "BestBuy"
             font_size: 24
             on_press: root.toBestBuy()
+            Image:
+                source: 'bestBuy.jpg'
+                y: self.parent.y
+                x: self.parent.x
+                size: self.parent.size
+                width: self.parent.width
+                keep_ratio: False
+                allow_stretch: True
 
 <tescoWindow>:
     searchBar: searchBar
