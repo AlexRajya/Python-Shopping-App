@@ -25,7 +25,7 @@ class bbSearch:
 
 class tescoSearch:
     def __init__(self,query):
-        tesco = requests.get(f"https://dev.tescolabs.com/grocery/products/?query="+query+"&offset=0&limit=13&",
+        tesco = requests.get(f"https://dev.tescolabs.com/grocery/products/?query="+query+"&offset=0&limit=30&",
             headers={
             "Ocp-Apim-Subscription-Key": 'b1ef4204177a4deb86619436f9e1e7a6'
             }

@@ -10,3 +10,6 @@ class bbWindow(Screen):
     def search(self):
         bb = bbSearch(self.searchBar.text)
         self.resultArea.text = bb.formatted
+        
+    def back(self):
+        self.manager.current = "choose"

@@ -31,51 +31,101 @@
     resultArea: resultArea
 
     FloatLayout:
-        TextInput:
-            id: searchBar
-            font_size: (root.width**2 + root.height**2) / 13**4
+        Label:
+            text: "Search:"
+            font_size: (root.width**2 + root.height**2) / 15**4
             multiline: False
             pos_hint: {"x": 0.1 , "top":0.9}
-            size_hint: 0.4, 0.15
+            size_hint: 0.2, 0.05
+
+        TextInput:
+            id: searchBar
+            font_size: (root.width**2 + root.height**2) / 15**4
+            multiline: False
+            pos_hint: {"x": 0.25 , "top":0.9}
+            size_hint: 0.4, 0.05
 
         Button:
-            font_size: (root.width**2 + root.height**2) / 13**4
-            pos_hint: {"x":0.6, "top":0.9}
-            size_hint: 0.35, 0.15
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.75, "top":0.9}
+            size_hint: 0.2, 0.05
             text: "Submit"
             on_release:
                 root.search()
 
-        Label:
-            id: resultArea
-            text:"Results here "
+        Button:
             font_size: (root.width**2 + root.height**2) / 15**4
-            pos_hint: {"x":0.2, "top":0.4}
-            size_hint: 0.35, 0.15
+            pos_hint: {"x":0, "top":1}
+            size_hint: 0.2, 0.05
+            text: "< Back"
+            on_release:
+                root.back()
+
+        ScrollView:
+            background_normal: ''
+            id: scrollLayout
+            pos_hint: {"x":0, "top":0.8}
+            canvas.before:
+                Color:
+                    rgba: (0,.1,.7,.2)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Label:
+                id: resultArea
+                font_size: (root.width**2 + root.height**2) / 15**4
+                multiline: True
+                size_hint: None, None
+                size: self.texture_size
 
 <bbWindow>:
     searchBar: searchBar
     resultArea: resultArea
 
     FloatLayout:
-        TextInput:
-            id: searchBar
-            font_size: (root.width**2 + root.height**2) / 13**4
+        Label:
+            text: "Search:"
+            font_size: (root.width**2 + root.height**2) / 15**4
             multiline: False
             pos_hint: {"x": 0.1 , "top":0.9}
-            size_hint: 0.4, 0.15
+            size_hint: 0.2, 0.05
+
+        TextInput:
+            id: searchBar
+            font_size: (root.width**2 + root.height**2) / 15**4
+            multiline: False
+            pos_hint: {"x": 0.25 , "top":0.9}
+            size_hint: 0.4, 0.05
 
         Button:
-            font_size: (root.width**2 + root.height**2) / 13**4
-            pos_hint: {"x":0.6, "top":0.9}
-            size_hint: 0.35, 0.15
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.75, "top":0.9}
+            size_hint: 0.2, 0.05
             text: "Submit"
             on_release:
                 root.search()
 
-        Label:
-            id: resultArea
-            text:"Results here "
+        Button:
             font_size: (root.width**2 + root.height**2) / 15**4
-            pos_hint: {"x":0.2, "top":0.4}
-            size_hint: 0.35, 0.15
+            pos_hint: {"x":0, "top":1}
+            size_hint: 0.2, 0.05
+            text: "< Back"
+            on_release:
+                root.back()
+
+        ScrollView:
+            background_normal: ''
+            id: scrollLayout
+            pos_hint: {"x":0, "top":0.8}
+            canvas.before:
+                Color:
+                    rgba: (0,.1,.7,.2)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Label:
+                id: resultArea
+                font_size: (root.width**2 + root.height**2) / 15**4
+                multiline: True
+                size_hint: None, None
+                size: self.texture_size

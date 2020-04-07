@@ -10,3 +10,6 @@ class tescoWindow(Screen):
     def search(self):
         tesco = tescoSearch(self.searchBar.text)
         self.resultArea.text = tesco.formatted
+    
+    def back(self):
+        self.manager.current = "choose"

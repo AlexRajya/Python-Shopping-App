@@ -47,7 +47,9 @@ def test():
     tesco = tescoSearch(input("Enter search query(Tesco): "))
     tesco.display()
 #start app
+main()
 choice = input('Enter "run" to start app or "test" to test APIs: ')
+
 if choice == 'run':
     main()
 else:
