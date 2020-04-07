@@ -32,9 +32,11 @@ class tescoSearch:
         self.result = json.loads(tesco.text)
         self.result = self.result['uk']['ghs']['products']['results']  
         self.products = productList(self.result, 'Tesco')
+        self.formatted = format(self.products)
     def display(self):
         displayProducts(self.products)
-            
+
+        
 def productList(productList, vendor):
     listOfProducts = []
     for i in range(len(productList)):
@@ -44,4 +46,11 @@ def productList(productList, vendor):
 def displayProducts(productList):
     for i in range(len(productList)):
         temp = productList[i]
-        print(temp.desc+"\n Price: £"+str(temp.price)+"\n")
+        print(temp.desc+" - Price: £"+str(temp.price)+"\n")
+        
+def format(productList):
+    formatted = ""
+    for i in range(len(productList)):
+        temp = productList[i]
+        formatted += temp.desc+" - Price: £"+str(temp.price)+"\n"
+    return formatted
