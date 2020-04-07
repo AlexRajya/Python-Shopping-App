@@ -19,6 +19,7 @@ class bbSearch:
         self.result = json.loads(bestBuy.text)
         self.result = self.result['products']
         self.products = productList(self.result, 'BestBuy')
+        self.formatted = format(self.products)
     def display(self):
         displayProducts(self.products)
 
