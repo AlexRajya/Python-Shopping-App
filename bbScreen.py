@@ -12,4 +12,5 @@ class bbWindow(Screen):
         self.resultArea.text = bb.formatted
         
     def back(self):
+        self.manager.transition = SlideTransition(direction="right")
         self.manager.current = "choose"

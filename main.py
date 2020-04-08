@@ -1,7 +1,7 @@
 from APIs import *
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 from kivy.properties import ObjectProperty
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
@@ -10,8 +10,10 @@ from bbScreen import bbWindow
 
 class Choose(Screen):
     def toTesco(self):
+        self.manager.transition = SlideTransition(direction="left")
         self.manager.current = "tesco"
     def toBestBuy(self):
+        self.manager.transition = SlideTransition(direction="left")
         self.manager.current = "bb"
 
 class ShoppingApp(App):
